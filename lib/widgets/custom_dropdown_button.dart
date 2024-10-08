@@ -9,7 +9,7 @@ class CustomDropdownButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+      padding: EdgeInsets.symmetric(horizontal: width * 0.09),
       width: width,
       decoration: BoxDecoration(
         color: const Color.fromRGBO(53, 53, 53, 1.0),

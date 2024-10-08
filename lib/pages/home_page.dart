@@ -77,9 +77,36 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    return CustomDropdownButton(
-        values: const ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
-        width: _deviceWidth);
+    List<String> _values = const [
+      'Destination',
+      'Mercury',
+      'Venus',
+      'Jupiter',
+      'Saturn',
+      'Uranus',
+      'Neptune'
+    ];
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.042),
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(53, 53, 53, 1.0),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: DropdownButton<String>(
+        value: _values.first,
+        onChanged: (_) {},
+        items: _values.map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        underline: Container(),
+        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
+        style: const TextStyle(color: Colors.white),
+      ),
+    );
   }
 
   Widget _travellesInformationWidget() {
@@ -87,7 +114,7 @@ class HomePage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         CustomDropdownButton(
-            values: const ['1', '2', '3', '4', '5'],
+            values: const ['Passengers', '1', '2', '3', '4', '5'],
             width: _deviceWidth * 0.45),
         CustomDropdownButton(
             values: const ['Economy', '10k', '20k', '30k'],
