@@ -23,9 +23,9 @@
 
 ## 📸 Screenshots
 
-![Home Screen](assets/Home.png)
-![Dropdown Menu](assets/Dropdown.png)
-![App Logo](assets/Appicon.png)
+<img src="assets/Home.png" alt="Home Screen" height="400">
+<img src="assets/Dropdown.png" alt="Dropdown Menu" height="400">
+<img src="assets/Appicon.png" alt="App Logo" height="400">
 
 ## 🚀 Getting Started
 
