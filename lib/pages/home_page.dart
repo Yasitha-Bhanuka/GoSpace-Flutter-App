@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moon_trip/widgets/custom_dropdown_button.dart';
 
 class HomePage extends StatelessWidget {
   late double _deviceWidth, _deviceHeight;
@@ -24,6 +25,7 @@ class HomePage extends StatelessWidget {
           children: [
             _spaceTripTextWidget(),
             _destinationDropDownWidget(),
+            _travellesInformationWidget(),
           ],
         ),
       )),
@@ -55,29 +57,13 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
-    List<String> _items = ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+    return CustomDropdownButton(
+        values: const ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
+        width: _deviceWidth);
+  }
 
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
-      width: _deviceWidth,
-      decoration: BoxDecoration(
-        color: Colors.red,
-        border: Border.all(color: const Color.fromRGBO(53, 53, 53, 1.0)),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: DropdownButton<String>(
-        value: _items.first,
-        onChanged: (_) {},
-        items: _items.map((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(value),
-          );
-        }).toList(),
-        underline: Container(),
-        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
-        style: const TextStyle(color: Colors.white),
-      ),
-    );
+  Widget _travellesInformationWidget() {
+    return CustomDropdownButton(
+        values: const ['1', '2', '3', '4', '5'], width: _deviceWidth * 0.45);
   }
 }
