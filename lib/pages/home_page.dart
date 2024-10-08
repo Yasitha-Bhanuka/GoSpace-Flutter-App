@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         width: _deviceWidth,
         height: _deviceHeight,
         padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
-        child: _moonTripTextWidget(),
+        child: _destinationDropDownWidget(),
       )),
     );
   }
@@ -33,15 +33,30 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _moonTripTextWidget() {
+  Widget _spaceTripTextWidget() {
     return Container(
       child: const Text(
-        "#MoonTrip",
+        "#GoSpace",
         style: TextStyle(
           color: Colors.white,
           fontSize: 70,
           fontWeight: FontWeight.bold,
         ),
+      ),
+    );
+  }
+
+  Widget _destinationDropDownWidget() {
+    return Container(
+      child: DropdownButton<String>(
+        onChanged: (_) {},
+        items: <String>['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
+            .map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
       ),
     );
   }
