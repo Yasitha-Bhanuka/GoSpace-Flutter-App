@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
               _bookRideWidget(),
             ],
           ),
-          _astroImageWidget(),
+          Align(alignment: Alignment.centerRight, child: _astroImageWidget()),
         ]),
       )),
     );
@@ -36,6 +36,8 @@ class HomePage extends StatelessWidget {
 
   Widget _astroImageWidget() {
     return Container(
+      height: _deviceHeight * 0.5,
+      width: _deviceWidth * 0.65,
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.fitHeight,
