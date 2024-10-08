@@ -14,9 +14,11 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(31, 31, 31, 1.0),
       body: SafeArea(
           child: Container(
-              width: _deviceWidth,
-              height: _deviceHeight,
-              child: _moonTripTextWidget())),
+        width: _deviceWidth,
+        height: _deviceHeight,
+        padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+        child: _moonTripTextWidget(),
+      )),
     );
   }
 
@@ -32,12 +34,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _moonTripTextWidget() {
-    return const Text(
-      "#MoonTrip",
-      style: TextStyle(
-        color: Colors.white,
-        fontSize: 70,
-        fontWeight: FontWeight.bold,
+    return Container(
+      child: const Text(
+        "#MoonTrip",
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 70,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
