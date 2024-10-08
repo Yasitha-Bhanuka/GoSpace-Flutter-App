@@ -23,9 +23,9 @@
 
 ## 📸 Screenshots
 
-![Home Screen](assets\Home.png)
-![Dropdown Menu](assets\Dropdown.png)
-![App Logo](assets\App Icon.png)
+![Home Screen](assets/Home.png)
+![Dropdown Menu](assets/Dropdown.png)
+![App Logo](assets/Appicon.png)
 
 ## 🚀 Getting Started
 
