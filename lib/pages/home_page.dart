@@ -24,8 +24,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _spaceTripTextWidget(),
-            _destinationDropDownWidget(),
-            _travellesInformationWidget(),
+            _bookRideWidget(),
           ],
         ),
       )),
@@ -39,6 +38,21 @@ class HomePage extends StatelessWidget {
           fit: BoxFit.fitHeight,
           image: AssetImage("assets/images/astro_moon.png"),
         ),
+      ),
+    );
+  }
+
+  Widget _bookRideWidget() {
+    return Container(
+      height: _deviceHeight * 0.2,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _destinationDropDownWidget(),
+          _travellesInformationWidget(),
+        ],
       ),
     );
   }
@@ -63,7 +77,16 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _travellesInformationWidget() {
-    return CustomDropdownButton(
-        values: const ['1', '2', '3', '4', '5'], width: _deviceWidth * 0.45);
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        CustomDropdownButton(
+            values: const ['1', '2', '3', '4', '5'],
+            width: _deviceWidth * 0.45),
+        CustomDropdownButton(
+            values: const ['Economy', '10k', '20k', '30k'],
+            width: _deviceWidth * 0.40),
+      ],
+    );
   }
 }
