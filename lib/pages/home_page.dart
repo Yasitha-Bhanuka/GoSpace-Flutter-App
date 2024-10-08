@@ -17,7 +17,15 @@ class HomePage extends StatelessWidget {
         width: _deviceWidth,
         height: _deviceHeight,
         padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
-        child: _destinationDropDownWidget(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _spaceTripTextWidget(),
+            _destinationDropDownWidget(),
+          ],
+        ),
       )),
     );
   }
