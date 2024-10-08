@@ -44,7 +44,7 @@ class HomePage extends StatelessWidget {
 
   Widget _bookRideWidget() {
     return Container(
-      height: _deviceHeight * 0.2,
+      height: _deviceHeight * 0.25,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
@@ -52,6 +52,7 @@ class HomePage extends StatelessWidget {
         children: [
           _destinationDropDownWidget(),
           _travellesInformationWidget(),
+          _bookTripButton(),
         ],
       ),
     );
@@ -87,6 +88,27 @@ class HomePage extends StatelessWidget {
             values: const ['Economy', '10k', '20k', '30k'],
             width: _deviceWidth * 0.40),
       ],
+    );
+  }
+
+  Widget _bookTripButton() {
+    return Container(
+      margin: EdgeInsets.only(bottom: _deviceHeight * 0.01),
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: MaterialButton(
+        onPressed: () {},
+        child: const Text(
+          "Book Tour",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
+        ),
+      ),
     );
   }
 }
