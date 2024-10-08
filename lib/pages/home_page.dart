@@ -58,8 +58,14 @@ class HomePage extends StatelessWidget {
     List<String> _items = ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05),
+      width: _deviceWidth,
+      decoration: BoxDecoration(
+        color: Colors.red,
+        border: Border.all(color: const Color.fromRGBO(53, 53, 53, 1.0)),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: DropdownButton<String>(
-        underline: Container(),
         value: _items.first,
         onChanged: (_) {},
         items: _items.map((String value) {
@@ -68,6 +74,9 @@ class HomePage extends StatelessWidget {
             child: Text(value),
           );
         }).toList(),
+        underline: Container(),
+        dropdownColor: const Color.fromRGBO(53, 53, 53, 1.0),
+        style: const TextStyle(color: Colors.white),
       ),
     );
   }
