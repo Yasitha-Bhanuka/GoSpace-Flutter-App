@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:moon_trip/pages/home_page.dart';
 
 void main() {
-  runApp(App());
+  runApp(const MyApp());
 }
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My App',
+      title: 'MyApp',
       theme: ThemeData.dark(),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
