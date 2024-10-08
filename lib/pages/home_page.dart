@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  late double _deviceWidth, _deviceHeight;
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    _deviceWidth = MediaQuery.of(context).size.width;
+    _deviceHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(31, 31, 31, 1.0),
-      body: SafeArea(child: _moonTripTextWidget()),
+      body: SafeArea(
+          child: Container(
+              width: _deviceWidth,
+              height: _deviceHeight,
+              child: _moonTripTextWidget())),
     );
   }
 
