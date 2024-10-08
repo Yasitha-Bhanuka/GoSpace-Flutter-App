@@ -55,11 +55,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _destinationDropDownWidget() {
+    List<String> _items = ['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+
     return Container(
       child: DropdownButton<String>(
+        underline: Container(),
+        value: _items.first,
         onChanged: (_) {},
-        items: <String>['Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune']
-            .map((String value) {
+        items: _items.map((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
